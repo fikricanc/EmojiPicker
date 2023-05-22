@@ -116,12 +116,12 @@ public final class EmojiPickerViewController: UIViewController {
     // MARK: - Init
     
     /// Creates EmojiPicker view controller with provided configuration.
-    public init() {
+    public init(modalPresentationStyle: UIModalPresentationStyle = .popover) {
         let emojiManager = EmojiManager()
         viewModel = EmojiPickerViewModel(emojiManager: emojiManager)
         
         super.init(nibName: nil, bundle: nil)
-        modalPresentationStyle = .popover
+        self.modalPresentationStyle = modalPresentationStyle
         
         setupDelegates()
         bindViewModel()
